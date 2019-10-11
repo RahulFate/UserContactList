@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GKJ-RY-oOT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ZIc-4x-kTj">
+            <objects>
+                <viewController id="GKJ-RY-oOT" customClass="ViewController" customModule="UserContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xtA-7u-hWp"/>
+                        <viewControllerLayoutGuide type="bottom" id="ypy-Ng-z08"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZUH-BG-jXD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Contact List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nkb-dj-KvG">
+                                <rect key="frame" x="20" y="28" width="335" height="37"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJ4-dZ-PAc">
+                                <rect key="frame" x="0.0" y="73" width="375" height="594"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GKJ-RY-oOT" id="9gd-U4-Tt0"/>
+                                    <outlet property="delegate" destination="GKJ-RY-oOT" id="lpG-t2-f2H"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving contacts..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5w-GW-oiL">
+                                <rect key="frame" x="107.5" y="322" width="160" height="23"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ypy-Ng-z08" firstAttribute="top" secondItem="MJ4-dZ-PAc" secondAttribute="bottom" id="0bb-mp-QRW"/>
+                            <constraint firstItem="Nkb-dj-KvG" firstAttribute="centerX" secondItem="ZUH-BG-jXD" secondAttribute="centerX" id="42w-fc-EhB"/>
+                            <constraint firstAttribute="trailing" secondItem="Nkb-dj-KvG" secondAttribute="trailing" constant="20" id="8W1-bD-qm7"/>
+                            <constraint firstItem="MJ4-dZ-PAc" firstAttribute="top" secondItem="Nkb-dj-KvG" secondAttribute="bottom" constant="8" id="DWg-gp-770"/>
+                            <constraint firstAttribute="trailing" secondItem="MJ4-dZ-PAc" secondAttribute="trailing" id="HcQ-t8-kUc"/>
+                            <constraint firstItem="t5w-GW-oiL" firstAttribute="centerX" secondItem="ZUH-BG-jXD" secondAttribute="centerX" id="ZyB-8N-J74"/>
+                            <constraint firstItem="MJ4-dZ-PAc" firstAttribute="leading" secondItem="ZUH-BG-jXD" secondAttribute="leading" id="aDy-iF-1Pn"/>
+                            <constraint firstItem="Nkb-dj-KvG" firstAttribute="top" secondItem="xtA-7u-hWp" secondAttribute="bottom" constant="8" id="iEJ-qv-4dK"/>
+                            <constraint firstItem="Nkb-dj-KvG" firstAttribute="leading" secondItem="ZUH-BG-jXD" secondAttribute="leading" constant="20" id="t93-26-X4D"/>
+                            <constraint firstItem="t5w-GW-oiL" firstAttribute="centerY" secondItem="ZUH-BG-jXD" secondAttribute="centerY" id="v58-Jw-T7g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noContactsLabel" destination="t5w-GW-oiL" id="Xx7-j9-ecl"/>
+                        <outlet property="tableView" destination="MJ4-dZ-PAc" id="G2u-Pb-agn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfB-rL-E8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568.8" y="-868.51574212893559"/>
+        </scene>
+    </scenes>
+</document>
